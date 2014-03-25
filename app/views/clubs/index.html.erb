@@ -1,0 +1,63 @@
+<h1>Listing clubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Abbrev</th>
+      <th>Website</th>
+      <th>School</th>
+      <th>Facebook</th>
+      <th>Facebook url</th>
+      <th>Contact person</th>
+      <th>Contact phone</th>
+      <th>Contact email</th>
+      <th>Introduction</th>
+      <th>Size</th>
+      <th>Sgid</th>
+      <th>Callink permalink</th>
+      <th>Requirements</th>
+      <th>Meeting</th>
+      <th>Address</th>
+      <th>Activity summary</th>
+      <th>Permalink</th>
+      <th>Related clubs</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clubs.each do |club| %>
+      <tr>
+        <td><%= club.name %></td>
+        <td><%= club.abbrev %></td>
+        <td><%= club.website %></td>
+        <td><%= club.school %></td>
+        <td><%= club.facebook_id %></td>
+        <td><%= club.facebook_url %></td>
+        <td><%= club.contact_person %></td>
+        <td><%= club.contact_phone %></td>
+        <td><%= club.contact_email %></td>
+        <td><%= club.introduction %></td>
+        <td><%= club.size %></td>
+        <td><%= club.SGID %></td>
+        <td><%= club.callink_permalink %></td>
+        <td><%= club.requirements %></td>
+        <td><%= club.meeting %></td>
+        <td><%= club.address %></td>
+        <td><%= club.activity_summary %></td>
+        <td><%= club.slug %></td>
+        <td><%= club.related_clubs %></td>
+        <td><%= link_to 'Show', club %></td>
+        <td><%= link_to 'Edit', edit_club_path(club) %></td>
+        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Club', new_club_path %>
