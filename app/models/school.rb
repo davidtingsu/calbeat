@@ -20,4 +20,8 @@ class School < ActiveRecord::Base
   friendly_id :name, use: :slugged
   acts_as_paranoid
   has_many :club
+
+  def to_s
+    name
+  end
 end

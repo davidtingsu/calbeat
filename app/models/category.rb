@@ -21,4 +21,8 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
   acts_as_paranoid
   has_and_belongs_to_many :clubs
+
+  def to_s
+    name
+  end
 end
