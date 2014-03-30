@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+School.find_or_create_by_name :name => "UC Berkeley"
+
+[["Berkeley Project", "Volunteer"], ["Hackers at Berkeley", "Academics"]].each do |club_name, category_name|
+  club = Club.find_or_create_by_name :name => club_name, :school_id => 1
+  category = Category.find_or_create_by_name :name => category_name
+  club.categories << category
+end
+

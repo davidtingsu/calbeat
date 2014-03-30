@@ -4,11 +4,10 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.3'
 gem "bootstrap-sass", "~> 3.0.3.0"
-gem 'bcrypt-ruby', '3.1.2'#password encryption
 gem 'faker', '1.1.2' #generate fake names
 gem 'will_paginate', '3.0.4' #paginate gems
 gem 'bootstrap-will_paginate', '0.0.9'
-gem 'annotate' #provides attribute annotation on model files
+gem 'annotate', '>=2.6.0' #provides attribute annotation on model files
 gem 'sprockets', '2.11.0' # allows for loading js files
 # automate jobs
 gem 'whenever', :require => false
@@ -21,10 +20,14 @@ gem 'devise'
 gem 'omniauth-facebook'
 # for environmental variables
 gem "figaro"
+gem 'paranoia', '~> 2.0'
+gem 'acts_as_commentable'
+gem 'impressionist'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
-  # This includes rspec-rails in a development environment so that we have 
+  # This includes rspec-rails in a development environment so that we have
   # access to RSpec-specific generators, and it includes it in test mode in order to
   # run the tests.
   gem 'rspec-rails', '2.13.1'
@@ -38,7 +41,7 @@ end
 group :test do
   # capybara dependecy
   gem 'selenium-webdriver', '2.35.1'
-  # allows us to simulate a user’s interaction with the 
+  # allows us to simulate a user’s interaction with the
   # sample application using a natural English-like syntax
   gem 'capybara', '2.1.0'
   # helps us create objects
@@ -51,6 +54,8 @@ end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
 gem 'jquery-rails', '3.0.4'

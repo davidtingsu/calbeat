@@ -1,0 +1,79 @@
+# == Schema Information
+#
+# Table name: clubs
+#
+#  id                :integer          not null, primary key
+#  name              :string(255)      not null
+#  slug              :string(255)
+#  abbrev            :string(255)
+#  school_id         :integer          not null
+#  introduction      :text
+#  website           :string(255)
+#  size              :integer
+#  requirements      :text
+#  meeting           :text
+#  address           :text
+#  activity_summary  :text
+#  contact_person    :string(255)
+#  contact_phone     :string(255)
+#  contact_email     :string(255)
+#  facebook_id       :integer
+#  facebook_url      :string(255)
+#  SGID              :integer
+#  callink_permalink :string(255)
+#  related_clubs     :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  deleted_at        :datetime
+#
+# Indexes
+#
+#  index_clubs_on_deleted_at  (deleted_at)
+#  index_clubs_on_name        (name) UNIQUE
+#  index_clubs_on_school_id   (school_id)
+#  index_clubs_on_slug        (slug) UNIQUE
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  abbrev: MyString
+  website: MyString
+  school_id: 
+  facebook_id: 1
+  facebook_url: MyString
+  contact_person: MyString
+  contact_phone: MyString
+  contact_email: MyString
+  introduction: MyText
+  size: 1
+  SGID: 1
+  callink_permalink: MyString
+  requirements: MyText
+  meeting: MyText
+  address: MyText
+  activity_summary: MyText
+  permalink: MyString
+  related_clubs: MyString
+
+two:
+  name: MyString
+  abbrev: MyString
+  website: MyString
+  school_id: 
+  facebook_id: 1
+  facebook_url: MyString
+  contact_person: MyString
+  contact_phone: MyString
+  contact_email: MyString
+  introduction: MyText
+  size: 1
+  SGID: 1
+  callink_permalink: MyString
+  requirements: MyText
+  meeting: MyText
+  address: MyText
+  activity_summary: MyText
+  permalink: MyString
+  related_clubs: MyString

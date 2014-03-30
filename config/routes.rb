@@ -1,5 +1,10 @@
 Calbeat::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  resources :clubs
+  resources :categories
+  resources :schools
+
   get "static_pages/home"
   get "static_pages/contact"
   get "static_pages/about"
