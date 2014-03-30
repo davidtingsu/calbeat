@@ -21,17 +21,18 @@
 #  facebook_url      :string(255)
 #  SGID              :integer
 #  callink_permalink :string(255)
-#  related_clubs     :string(255)
+#  related_club_ids  :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
 #  deleted_at        :datetime
 #
 # Indexes
 #
-#  index_clubs_on_deleted_at  (deleted_at)
-#  index_clubs_on_name        (name) UNIQUE
-#  index_clubs_on_school_id   (school_id)
-#  index_clubs_on_slug        (slug) UNIQUE
+#  index_clubs_on_deleted_at   (deleted_at)
+#  index_clubs_on_facebook_id  (facebook_id) UNIQUE
+#  index_clubs_on_name         (name) UNIQUE
+#  index_clubs_on_school_id    (school_id)
+#  index_clubs_on_slug         (slug) UNIQUE
 #
 
 class Club < ActiveRecord::Base
@@ -43,6 +44,12 @@ class Club < ActiveRecord::Base
 
   validates :name, presence: true
   validates :school_id, presence: true
+
+  def related_clubs
+    if related_club_ids
+      related_club_ids.split().map { |club_id| Club.find(club_id).name }
+    end
+  end
 
   def to_s
     name

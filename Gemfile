@@ -52,6 +52,7 @@ group :test do
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
+gem 'haml'
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
 # Use CoffeeScript for .js.coffee assets and views

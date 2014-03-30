@@ -15,16 +15,17 @@ class CreateClubs < ActiveRecord::Migration
       t.string :contact_person
       t.string :contact_phone
       t.string :contact_email
-      t.integer :facebook_id
+      t.column :facebook_id, :bigint
       t.string :facebook_url
 
       t.integer :SGID
       t.string :callink_permalink
-      t.string :related_clubs
+      t.string :related_club_ids
 
       t.timestamps
     end
     add_index :clubs, :name, unique: true
     add_index :clubs, :slug, unique: true
+    add_index :clubs, :facebook_id, unique: true
   end
 end
