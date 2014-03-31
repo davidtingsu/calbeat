@@ -41,6 +41,7 @@ class Club < ActiveRecord::Base
   acts_as_paranoid
   belongs_to :school
   has_and_belongs_to_many :categories
+  has_many :events
 
   validates :name, presence: true
   validates :school_id, presence: true

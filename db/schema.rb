@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328033945) do
+ActiveRecord::Schema.define(version: 20140331212330) do
 
   create_table "categories", force: true do |t|
     t.string   "name",       null: false
@@ -64,6 +64,26 @@ ActiveRecord::Schema.define(version: 20140328033945) do
   add_index "clubs", ["name"], name: "index_clubs_on_name", unique: true
   add_index "clubs", ["school_id"], name: "index_clubs_on_school_id"
   add_index "clubs", ["slug"], name: "index_clubs_on_slug", unique: true
+
+  create_table "events", force: true do |t|
+    t.string   "name",        null: false
+    t.string   "slug"
+    t.string   "location"
+    t.integer  "facebook_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text     "description"
+    t.integer  "club_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+  end
+
+  add_index "events", ["club_id"], name: "index_events_on_club_id"
+  add_index "events", ["deleted_at"], name: "index_events_on_deleted_at"
+  add_index "events", ["facebook_id"], name: "index_events_on_facebook_id", unique: true
+  add_index "events", ["name"], name: "index_events_on_name", unique: true
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
